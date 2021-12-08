@@ -1,0 +1,20 @@
+# Env
+.env
+
+# Venv
+venv
+
+# Idea
+.idea
+
+# Python
+__pycache__/
+
+# Other
+*.sqlite*
+
+# MEDIA local
+media
+
+# Celery
+celerybeat-schedule
