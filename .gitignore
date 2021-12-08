@@ -18,3 +18,7 @@ media
 
 # Celery
 celerybeat-schedule
+
+dist
+htg_url_generator.egg-info
+build
