@@ -25,10 +25,9 @@ class AbstractDownloadDocumentView(View):
 
         instance = base_class(**properties)
         doc_identifier = instance.get_doc_identifier()
-        print(doc_identifier)
+
         # get document base64 string from Redis
         document_string = RedisWrapper.get(doc_identifier)
-        print(document_string)
         if document_string:
             return self._get_file(document_string)
 
