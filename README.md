@@ -4,7 +4,7 @@
 
 ### 1. Install package
 
-```sh
+```shell
 $ pip install htg-url-generator
 ```
 
@@ -73,4 +73,12 @@ HTG_URL_SETTINGS = {
     'HTG_WRAPPER_CLASS': 'app_name.file_name.class_name',
     'DOC_WRAPPER_CLASS': 'app_name.file_name.class_name'
 }
+```
+
+### NOTE
+```sh
+Package expects you to have 'REDIS_HOST' and 'REDIS_PORT' environment variables as follows:
+```
+```python
+host=os.environ.get('REDIS_HOST'), port=int(os.environ.get('REDIS_PORT'))
 ```
