@@ -75,6 +75,11 @@ HTG_URL_SETTINGS = {
 }
 ```
 
+### 8. Run tests
+```shell
+$ python manage.py test htg_url
+```
+
 ### NOTE
 ```sh
 Package expects you to have 'REDIS_HOST' and 'REDIS_PORT' environment variables as follows:
