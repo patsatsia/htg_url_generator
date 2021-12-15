@@ -25,7 +25,9 @@ class ExampleGeneratorClass(AbstractHtgUrlGenerator):
     @staticmethod
     def create_unique_identifier(**properties):
         ...
-        Include custom implementation
+        Include
+        custom
+        implementation
         ...
 ```
 
@@ -40,7 +42,9 @@ class ExampleFetcherCLass(AbstractFetchDataFromSap):
     @staticmethod
     def fetch_document_from_sap(**properties):
         ...
-        Include custom implementation
+        Include
+        custom
+        implementation
         ...
 ```
 
@@ -76,14 +80,27 @@ HTG_URL_SETTINGS = {
 ```
 
 ### 8. Run tests
+
 ```shell
 $ python manage.py test htg_url
 ```
 
 ### NOTE
+
 ```sh
 Package expects you to have 'REDIS_HOST' and 'REDIS_PORT' environment variables as follows:
 ```
+
 ```python
-host=os.environ.get('REDIS_HOST'), port=int(os.environ.get('REDIS_PORT'))
+host = os.environ.get('REDIS_HOST'), port = int(os.environ.get('REDIS_PORT'))
+```
+
+### NOTE
+
+```sh
+Package also expects you to have 'libmagic' installed on your machine as 'python-magic' library depends on it:
+```
+
+```shell
+$ sudo apt-get install libmagic1
 ```
