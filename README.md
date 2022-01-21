@@ -88,11 +88,12 @@ $ python manage.py test htg_url
 ### NOTE
 
 ```sh
-Package expects you to have 'REDIS_HOST' and 'REDIS_PORT' environment variables as follows:
+Package expects you to have 'REDIS_HOST', 'REDIS_PORT' and 'REDIS_PASSWORD' environment variables as follows:
 ```
 
 ```python
-host = os.environ.get('REDIS_HOST'), port = int(os.environ.get('REDIS_PORT'))
+host = os.environ.get('REDIS_HOST'), port = int(os.environ.get('REDIS_PORT')),
+password = os.environ.get('REDIS_PASSWORD')
 ```
 
 ### NOTE
