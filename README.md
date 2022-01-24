@@ -76,6 +76,7 @@ HTG_URL_SETTINGS = {
     'HTG_URL_REDIS_TTL': 216000, # 60 minutes
     'HTG_WRAPPER_CLASS': 'app_name.file_name.class_name',
     'DOC_WRAPPER_CLASS': 'app_name.file_name.class_name'
+    'REDIS_CONNECTION_STRING': 'redis_connection_string' or None
 }
 ```
 
