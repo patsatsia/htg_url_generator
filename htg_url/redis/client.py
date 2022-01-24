@@ -8,6 +8,11 @@ class RedisWrapper:
 
     @classmethod
     def client(cls):
+        redis_connection_string = settings.HTG_URL_SETTINGS.get('REDIS_CONNECTION_STRING')
+        if cls._CONNECTION is None and redis_connection_string:
+            cls._CONNECTION = redis.Redis.from_url(redis_connection_string)
+            return cls._CONNECTION
+
         if cls._CONNECTION is None:
             cls._CONNECTION = redis.Redis(
                 host=os.environ.get('REDIS_HOST'),
