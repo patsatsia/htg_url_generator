@@ -89,12 +89,17 @@ $ python manage.py test htg_url
 ### NOTE
 
 ```sh
-Package expects you to have 'REDIS_HOST', 'REDIS_PORT' and 'REDIS_PASSWORD' environment variables as follows:
+Package will use connection string to connect to Redis if it is defined in settings under 'REDIS_CONNECTION_STRING'.
+Otherwise it will initialize connection using environment variables (see below)
+```
+
+```sh
+Package expects you to have 'REDIS_HOST', 'REDIS_PORT', 'REDIS_PASSWORD' and 'CACHE_REDIS_DB' (db index) environment variables as follows:
 ```
 
 ```python
 host = os.environ.get('REDIS_HOST'), port = int(os.environ.get('REDIS_PORT')),
-password = os.environ.get('REDIS_PASSWORD')
+password = os.environ.get('REDIS_PASSWORD'), os.environ.get('CACHE_REDIS_DB')
 ```
 
 ### NOTE
