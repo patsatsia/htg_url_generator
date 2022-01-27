@@ -49,7 +49,6 @@ class AbstractDownloadDocumentView(View):
     def _get_file(document_string):
         buffer = BytesIO()
         buffer.write(base64.b64decode(document_string))
-        buffer.seek(io.SEEK_SET)
 
         mime_type = magic.from_buffer(buffer.getvalue(), True)
         extension = mimetypes.guess_extension(mime_type)
