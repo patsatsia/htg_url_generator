@@ -8,6 +8,7 @@ from django.conf import settings
 from django.http import Http404, FileResponse
 from .redis.client import RedisWrapper
 from django.views import View
+from wsgiref.util import FileWrapper
 
 
 class AbstractDownloadDocumentView(View):
@@ -48,11 +49,15 @@ class AbstractDownloadDocumentView(View):
     def _get_file(document_string):
         buffer = BytesIO()
         buffer.write(base64.b64decode(document_string))
+        buffer.seek(io.SEEK_SET)
+
         mime_type = magic.from_buffer(buffer.getvalue(), True)
         extension = mimetypes.guess_extension(mime_type)
+
         buffer.seek(io.SEEK_SET)
+
         return FileResponse(
-            buffer,
+            FileWrapper(buffer),
             as_attachment=True,
             filename=f'document{extension}',
             content_type=mime_type
