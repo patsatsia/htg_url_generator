@@ -17,7 +17,8 @@ class RedisWrapper:
             cls._CONNECTION = redis.Redis(
                 host=os.environ.get('REDIS_HOST'),
                 port=int(os.environ.get('REDIS_PORT')),
-                password=os.environ.get('REDIS_PASSWORD')
+                password=os.environ.get('REDIS_PASSWORD'),
+                db=os.environ.get('CACHE_REDIS_DB')
             )
         return cls._CONNECTION
 
